@@ -1,0 +1,29 @@
+<p-table [value]="clients"   dataKey="id"  [(selection)]="selectedclient " (onRowSelect)="onSelectedRow($event)" selectionMode="Multiple"
+
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Nom</th>
+      <th>Email</th>
+      <th>Adresse</th>
+      <th>Téléphone</th>
+<th></th>
+
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-clt>
+
+    <tr  [pSelectableRow]="clt" (click)="onSelectedRow(clt.id)"  >
+      <td>{{clt.nom}}</td>
+      <td>{{clt.email}}</td>
+      <td>{{clt.adresse}}</td>
+      <td>{{clt.tel}}</td>
+<td> <button type="button" class=" btn btn-success"
+             [disabled]="clt?.portefeuille ? true: false"
+             (click)="addportfeuille(clt)" >ajouter un portfeuille</button></td>
+
+
+    </tr>
+
+  </ng-template>
+</p-table>

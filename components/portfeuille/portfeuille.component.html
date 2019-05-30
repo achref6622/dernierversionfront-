@@ -1,0 +1,24 @@
+
+<p-table [value]="clients">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Date</th>
+      <th>Numero</th>
+      <th>Numeraire</th>
+      <th>Valorisation</th>
+
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-clt  >
+
+    <tr >
+      <td >{{clt. portefeuille.dateCreation}}</td>
+      <td>{{clt. portefeuille.numPortefeuille}}</td>
+      <td>{{clt. portefeuille.numeraire}}</td>
+      <td>{{clt. portefeuille.valorisation}}</td>
+    </tr>
+
+  </ng-template>
+</p-table>
+<br> <br>
+<button type="button" class="btn  btn-lg " routerLink="/mesorders">Voir Mes Ordres</button>

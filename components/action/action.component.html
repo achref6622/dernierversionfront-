@@ -1,0 +1,34 @@
+
+<p-table  [columns]="cols"  [value]="cours" selectionMode="single" [(selection)]="selectedAction"
+          dataKey="id" (onRowSelect)="onSelectedRow($event)">
+  <ng-template pTemplate="header" let-rowData let-columns>
+    <tr>
+
+      <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+        {{col.header}}
+        <p-sortIcon [field]="col.field" ></p-sortIcon>
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowData let-columns="columns">
+    <tr [pSelectableRow]="rowData">
+
+      <td *ngFor="let col of columns">
+        <div *ngIf="col.field === 'action.nom'">
+          {{rowData.action.nom}}
+        </div>
+
+        <div *ngIf="col.field === 'date'">
+          {{rowData[col.field] | date:'short'}}
+        </div>
+        <div *ngIf="col.field !== 'action'">
+          <div *ngIf="col.field !== 'date'">
+          {{rowData[col.field]}}
+          </div>
+        </div>
+
+      </td>
+
+    </tr>
+  </ng-template>
+</p-table>

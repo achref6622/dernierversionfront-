@@ -1,0 +1,40 @@
+<h4><i class="fa fa-angle-right"></i> Order</h4>
+
+<div class="form-panel">
+  <div class=" form">
+    <form class="cmxform form-horizontal style-form" id="commentForm" method="get" action="">
+      <div class="form-group ">
+        <label  class="control-label col-lg-2">Action</label>
+        <div class="col-lg-4">
+          <select class="form-control"  name="nomaction"  [(ngModel)]="actionnom">
+            <option  *ngFor="let act of action" [value]="act.nom">{{act.nom}}</option>
+          </select> <br>
+          <label  >voir l'historique de cette action</label>
+        </div>
+      </div>
+      <div class="form-group ">
+        <label for="cemail" class="control-label col-lg-2">Prix </label>
+        <div class="col-lg-4">
+          <input class="form-control " [(ngModel)]="ordre.prix" id="cemail" type="text" name="prix" required>
+        </div>
+      </div>
+
+      <div class="form-group ">
+
+        <label for="cemail" class="control-label col-lg-2">Quantites </label>
+        <div class="col-lg-4">
+          <input class="form-control " [(ngModel)]="ordre.quantite"  type="text"  name="quantites" required="">
+
+        </div>
+
+        </div>
+
+      <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+          <button class="btn btn-theme" type="submit" (click)="updateordre()">Modifier </button>
+          <button class="btn btn-theme04" type="button">Annuler</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

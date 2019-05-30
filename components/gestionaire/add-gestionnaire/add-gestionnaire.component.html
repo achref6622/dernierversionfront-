@@ -1,0 +1,245 @@
+<section class="wrapper site-min-height">
+  <div class="row mt">
+    <div class="col-lg-12">
+
+      <!-- /row -->
+    </div>
+    <!-- /col-lg-12 -->
+    <div class="col-lg-12 mt">
+      <div class="row content-panel">
+        <div class="panel-heading">
+          <ul class="nav nav-tabs nav-justified">
+            <li class="">
+              <a data-toggle="tab" href="#overview" aria-expanded="false">Admin </a>
+            </li>
+            <li class="active">
+              <a data-toggle="tab" href="#contact" class="contact-map" aria-expanded="true">Gestionnaire</a>
+            </li>
+
+          </ul>
+        </div>
+        <div class="panel-body">
+          <div class="tab-content">
+            <div id="overview" class="tab-pane">
+              <div class="row">
+
+
+                <div class="col-lg-8 col-lg-offset-2 detailed">
+                  <h4 class="mb"> Admin</h4>
+                  <div  class="form-horizontal">
+                    <!--form group -->
+                    <div class="form-group">
+                      <label class="col-lg-2 control-label"> Nom</label>
+                      <div class="col-lg-6">
+                        <input type="text" [(ngModel)]="admin.nom" class="form-control" #nom="ngModel"   #nom="ngModel" required>
+
+
+                        <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="has-error">
+
+
+                          <div *ngIf="nom.errors.required">
+                            <p class="help-block"> Nom réquis </p>
+                          </div>
+                        </div>
+
+
+                      </div>
+
+                    </div>
+
+                    <div class="form-group">
+                      <label class="col-lg-2 control-label"> adresse</label>
+                      <div class="col-lg-6">
+                        <input type="text" [(ngModel)]="admin.adresse"  class="form-control"   #adr="ngModel" required>
+
+                        <div *ngIf="adr.invalid && (adr.dirty || adr.touched)" class="has-error">
+
+
+                          <div *ngIf="adr.errors.required">
+                            <p class="help-block"> Adresse réquis </p>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-lg-2 control-label"> tel</label>
+                      <div class="col-lg-6">
+                        <input type="text"  [(ngModel)]="admin.tel" class="form-control" maxlength="8" minlength="8"  #tel="ngModel" required>
+
+                        <div *ngIf="tel.invalid && (tel.dirty || tel.touched)" class="has-error">
+
+
+                          <div *ngIf="tel.errors.required">
+                            <p class="help-block"> Téléphone réquis </p>
+                          </div>
+                          <div *ngIf="tel.errors.minlength">
+                            <p class="help-block"> Le téléphone doit comporter 8 chiffres </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-lg-2 control-label"> email</label>
+                      <div class="col-lg-6">
+                        <input type="email" [(ngModel)]="admin.email"class="form-control" #email="ngModel" required>
+                        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="has-error">
+
+
+                          <div *ngIf="email.errors.required">
+                            <p class="help-block"> E-mail réquis </p>
+                          </div>
+                          <div *ngIf="email.errors.email">
+                            <p class="help-block"> E-mail invalid </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="col-lg-2 control-label">  mot de passe  </label>
+                      <div class="col-lg-6">
+                        <input type="password"  class="form-control"  required [(ngModel)]="admin.password" #mdp="ngModel"   >
+                        <div *ngIf="mdp.invalid && (mdp.dirty || mdp.touched)" class="has-error">
+
+
+                          <div *ngIf="mdp.errors.required">
+                            <p class="help-block">       Mot de passe réquis    </p>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button  type="button"  class="btn btn-theme" (click)="inscriradmin()"[disabled]="nom.invalid || email.invalid ||
+                  adr.invalid || tel.invalid  "> ajouter admin </button>
+
+
+                      <button data-dismiss="modal" class="btn btn-theme" type="button" >Annuler</button>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+              <!-- /OVERVIEW -->
+            </div>
+            <!-- /tab-pane -->
+            <div id="contact" class="tab-pane active">
+              <div class="row">
+
+
+                <div class="col-lg-8 col-lg-offset-2 detailed">
+                  <h4 class="mb">Personal Information</h4>
+                  <div  class="form-horizontal">
+                    <!--form group -->
+                    <div class="form-group">
+                      <label class="col-lg-2 control-label"> Nom</label>
+                      <div class="col-lg-6">
+                        <input type="text" [(ngModel)]="gestionaire.nom" class="form-control" #nom="ngModel"   #nom="ngModel" required>
+
+
+                        <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="has-error">
+
+
+                          <div *ngIf="nom.errors.required">
+                            <p class="help-block"> Nom réquis </p>
+                          </div>
+                        </div>
+
+
+                      </div>
+
+                    </div>
+
+                    <div class="form-group">
+                      <label class="col-lg-2 control-label"> adresse</label>
+                      <div class="col-lg-6">
+                        <input type="text" [(ngModel)]="gestionaire.adresse"  class="form-control"   #adr="ngModel" required>
+
+                        <div *ngIf="adr.invalid && (adr.dirty || adr.touched)" class="has-error">
+
+
+                          <div *ngIf="adr.errors.required">
+                            <p class="help-block"> Adresse réquis </p>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-lg-2 control-label"> tel</label>
+                      <div class="col-lg-6">
+                        <input type="text"  [(ngModel)]="gestionaire.tel" class="form-control" maxlength="8" minlength="8"  #tel="ngModel" required>
+
+                        <div *ngIf="tel.invalid && (tel.dirty || tel.touched)" class="has-error">
+
+
+                          <div *ngIf="tel.errors.required">
+                            <p class="help-block"> Téléphone réquis </p>
+                          </div>
+                          <div *ngIf="tel.errors.minlength">
+                            <p class="help-block"> Le téléphone doit comporter 8 chiffres </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-lg-2 control-label"> email</label>
+                      <div class="col-lg-6">
+                        <input type="email" [(ngModel)]="gestionaire.email"class="form-control" #email="ngModel" required>
+                        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="has-error">
+
+
+                          <div *ngIf="email.errors.required">
+                            <p class="help-block"> E-mail réquis </p>
+                          </div>
+                          <div *ngIf="email.errors.email">
+                            <p class="help-block"> E-mail invalid </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="col-lg-2 control-label">  mot de passe  </label>
+                      <div class="col-lg-6">
+                        <input type="password"  class="form-control"  required [(ngModel)]="gestionaire.password" #mdp="ngModel"   >
+                        <div *ngIf="mdp.invalid && (mdp.dirty || mdp.touched)" class="has-error">
+
+
+                          <div *ngIf="mdp.errors.required">
+                            <p class="help-block">       Mot de passe réquis    </p>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button  type="button"  class="btn btn-theme" (click)="inscrir()"[disabled]="nom.invalid || email.invalid ||
+                  adr.invalid || tel.invalid  "> ajouter gestionnaire </button>
+
+
+                      <button data-dismiss="modal" class="btn btn-theme" type="button" >Annuler</button>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+              <!-- /row -->
+            </div>
+            <!-- /tab-pane -->
+
+            <!-- /tab-pane -->
+          </div>
+          <!-- /tab-content -->
+        </div>
+        <!-- /panel-body -->
+      </div>
+      <!-- /col-lg-12 -->
+    </div>
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+</section>

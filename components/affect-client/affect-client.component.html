@@ -1,0 +1,39 @@
+<p-table [value]="clients"  [(selection)]="selectedClient" dataKey="id" (onRowSelect)="selectRow($event)"
+(onRowUnselect)="unSelectRow($event)" (onHeaderCheckboxToggle)="selectAll($event)">
+  <ng-template pTemplate="header">
+    <tr>
+      <th style="width: 3em">
+        <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+      </th>
+      <th>Nom</th>
+      <th>Email</th>
+      <th>Adresse</th>
+      <th>Téléphone</th>
+
+
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-clt>
+    <tr  [pSelectableRow]="clt">
+
+      <td>
+        <p-tableCheckbox [value]="clt"></p-tableCheckbox>
+      </td>
+      <td>{{clt.nom}}</td>
+      <td>{{clt.email}}</td>
+      <td>{{clt.adresse}}</td>
+      <td>{{clt.tel}}</td>
+
+
+
+
+    </tr>
+  </ng-template>
+</p-table>
+<hr>
+<div class="modal-footer">
+  <button  type="button" style="width: 250px" (click)="affecter()" class="btn btn-success"  [disabled]="disable" > Affecter </button>
+
+
+
+</div>

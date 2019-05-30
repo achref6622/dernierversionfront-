@@ -1,0 +1,42 @@
+<select class="form-control" [(ngModel)]="select" (ngModelChange)="menuselected($event)"  >
+  <option  selected >tous</option>
+  <option>achat </option>
+  <option chan>vente</option>
+</select>
+
+
+
+<div class="panel-body">
+  <div class="tab-content" >
+<div   id="tous" >
+  <br>
+<p-table [value]="Order"
+         dataKey="id"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Action</th>
+      <th>Date</th>
+      <th>Etat</th>
+      <th>Prix</th>
+      <th>Quantite</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-clt>
+    <tr  [pSelectableRow]="clt" >
+      <td>{{clt.portefeuillAction.action.nom}}</td>
+      <td>{{clt.dateCreation}}</td>
+      <td>{{clt.etat}}</td>
+      <td>{{clt.quantite}}</td>
+      <td>{{clt.prix}}</td>
+
+
+
+    </tr>
+  </ng-template>
+</p-table>
+</div>
+
+
+  </div>
+
