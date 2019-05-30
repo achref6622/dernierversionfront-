@@ -1,0 +1,82 @@
+<aside>
+  <div id="sidebar" class="nav-collapse " tabindex="5000" style="overflow: hidden; outline: none;">
+    <!-- sidebar menu start-->
+    <ul class="sidebar-menu" id="nav-accordion">
+      <p class="centered"><a routerLink="/profile"><img src="assets/img/ui-sherman.jpg" class="img-circle" width="80"></a></p>
+      <h5 class="centered">{{user.nom}}</h5>
+
+      <li class="sub-menu dcjq-parent-li" *ngIf="isAdmin">
+
+      <li class="mt" *ngIf="isAdmin">
+        <a class="" routerLink="/gestionaire">
+          <i class="fa fa-users"></i>
+          <span>Liste des gestionnaire</span>
+        </a>
+      </li>
+      <li class="mt"  *ngIf="isAdmin" >
+        <a class="" routerLink="/client">
+          <i class="fa fa-users"></i>
+          <span>Liste des clients</span>
+        </a>
+      </li>
+
+      <li class="mt"  *ngIf="isGestionnaire" >
+        <a class="" routerLink="/clientdegestion">
+          <i class="fa fa-users"></i>
+          <span>Liste des mes clients</span>
+        </a>
+      </li>
+
+
+
+      <li class="mt"  *ngIf="isClient">
+        <a class="fa fa-archive" routerLink="/portfeuille">
+          <i class=""></i>
+          <span>portfeuille</span>
+        </a>
+      </li>
+      <li class="mt" >
+        <a class="" routerLink="/action">
+          <i class="fa fa-external-link-square"></i>
+          <span>Action</span>
+        </a>
+      </li>
+      <li class="mt"  *ngIf="isAdmin" >
+        <a class="" routerLink="/addgestionnaire">
+          <i class="fa fa-cogs"></i>
+          <span>Ajouter </span>
+        </a>
+      </li>
+      <li class="mt"  *ngIf="isGestionnaire" >
+        <a class=""  routerLink="/order">
+          <i class="fa fa-cogs"></i>
+          <span>Order </span>
+        </a>
+      </li>
+
+      <!--
+      <li class="sub-menu dcjq-parent-li">
+        <a href="javascript:;" class="dcjq-parent">
+          <i class="fa fa-desktop"></i>
+          <span>UI Elements</span>
+          <span class="dcjq-icon"></span></a>
+        <ul class="sub" style="display: none;">
+          <li><a href="general.html">General</a></li>
+          <li><a href="buttons.html">Buttons</a></li>
+          <li><a href="panels.html">Panels</a></li>
+          <li><a href="font_awesome.html">Font Awesome</a></li>
+        </ul>
+      </li>
+      -->
+
+
+
+
+
+
+
+
+    </ul>
+    <!-- sidebar menu end-->
+  </div>
+</aside>
